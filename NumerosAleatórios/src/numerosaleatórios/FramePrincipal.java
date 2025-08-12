@@ -7,6 +7,9 @@ package numerosaleatórios;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -79,12 +82,21 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void btnGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarActionPerformed
         // TODO add your handling code here:
         int quant;
-        
+        Random random = new Random();
         quant = Integer.parseInt(txtQuantidade.getText());
-        ArrayList <int> nums;
+        
+        //int[] nums = new int[quant];
+        Set nums = new TreeSet();
         for(int i = 0; i < quant; i++){
-            nums.set(i, random.nextInt(100));
+            nums.add(random.nextInt(100));
         }
+        System.out.println("Numeros: \n");
+        /*for(int i = 0; i < quant; i++){
+            System.out.println(nums[i]);
+        }*/
+        
+        System.out.println(nums);
+        
     }//GEN-LAST:event_btnGerarActionPerformed
 
     /**
