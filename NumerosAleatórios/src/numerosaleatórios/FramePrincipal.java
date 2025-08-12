@@ -83,19 +83,28 @@ public class FramePrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         int quant;
         Random random = new Random();
-        quant = Integer.parseInt(txtQuantidade.getText());
-        
-        //int[] nums = new int[quant];
-        Set nums = new TreeSet();
-        for(int i = 0; i < quant; i++){
-            nums.add(random.nextInt(100));
+        try{   
+            quant = Integer.parseInt(txtQuantidade.getText());
+
+            //int[] nums = new int[quant];
+            Set nums = new TreeSet();
+            for(int i = 0; i < quant; i++){
+                nums.add(random.nextInt(100));
+            }
+            System.out.println("Numeros:");
+            /*for(int i = 0; i < quant; i++){
+                System.out.println(nums[i]);
+            }*/
+
+            JOptionPane.showMessageDialog(null, "Números gerados: " + nums);
         }
-        System.out.println("Numeros:");
-        /*for(int i = 0; i < quant; i++){
-            System.out.println(nums[i]);
-        }*/
         
-        JOptionPane.showMessageDialog(null, "Números gerados: " + nums);
+        catch(java.lang.NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Coloque apenas números");
+        }
+        catch(Exception ex){
+            System.out.println("Erro: " + ex);
+        }
         
     }//GEN-LAST:event_btnGerarActionPerformed
 

@@ -117,14 +117,23 @@ public class FramePrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         int anos, meses, dias;
         
-        anos = Integer.parseInt(txtAnos.getText());
-        meses = Integer.parseInt(txtMeses.getText());
-        dias = Integer.parseInt(txtDias.getText());
+        try{
+            anos = Integer.parseInt(txtAnos.getText());
+            meses = Integer.parseInt(txtMeses.getText());
+            dias = Integer.parseInt(txtDias.getText());
+            int idade = anos * 365 + meses * 30 + dias;
+        
+            JOptionPane.showMessageDialog(null, "Você tem " + idade + " dias de idade");
+        }
+        catch(java.lang.NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Coloque apenas números");
+        }
+        catch(Exception ex){
+            System.out.println("Erro: " + ex);
+        }
         
         
-        int idade = anos * 365 + meses * 30 + dias;
         
-        JOptionPane.showMessageDialog(null, "Você tem " + idade + " dias de idade");
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**

@@ -135,19 +135,27 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
         Double at, p1, t1, t2, m;
+        try{
+            at = Double.parseDouble(txtAT.getText());
+            p1 = Double.parseDouble(txtP1.getText());
+            t1 = Double.parseDouble(txtT1.getText());
+            t2 = Double.parseDouble(txtT2.getText());
+            m = Double.parseDouble(txtM.getText());
+
+            Double media;
+
+            media = at * 0.20 + p1 * 0.20 + t1 * 0.30 + t2 * 0.30 + m * 0.10;
+
+
+            JOptionPane.showMessageDialog(null, "Média do aluno: " + media);
+        }
+        catch(java.lang.NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Coloque apenas números");
+        }
+        catch(Exception ex){
+            System.out.println("Erro: " + ex);
+        }
         
-        at = Double.parseDouble(txtAT.getText());
-        p1 = Double.parseDouble(txtP1.getText());
-        t1 = Double.parseDouble(txtT1.getText());
-        t2 = Double.parseDouble(txtT2.getText());
-        m = Double.parseDouble(txtM.getText());
-        
-        Double media;
-        
-        media = at * 0.20 + p1 * 0.20 + t1 * 0.30 + t2 * 0.30 + m * 0.10;
-        
-        
-        JOptionPane.showMessageDialog(null, "Média do aluno: " + media);
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**

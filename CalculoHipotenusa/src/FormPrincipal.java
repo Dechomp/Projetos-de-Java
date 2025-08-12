@@ -109,18 +109,26 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
         double catA, catB;
+        try{
+            catA = Double.parseDouble(txtCatetoA.getText());
+            catB = Double.parseDouble(txtCatetoB.getText());
+
+            catA *= catA;
+            catB *= catB;
+
+            double hipo = catA + catB;
+
+            hipo = Math.sqrt(hipo);
+
+            JOptionPane.showMessageDialog(this, "A hipotenusa do triangulo é: " + hipo);
+        }
+        catch(java.lang.NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Coloque apenas números");
+        }
+        catch(Exception ex){
+            System.out.println("Erro: " + ex);
+        }
         
-        catA = Double.parseDouble(txtCatetoA.getText());
-        catB = Double.parseDouble(txtCatetoB.getText());
-        
-        catA *= catA;
-        catB *= catB;
-        
-        double hipo = catA + catB;
-        
-        hipo = Math.sqrt(hipo);
-        
-        JOptionPane.showMessageDialog(this, "A hipotenusa do triangulo é: " + hipo);
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
