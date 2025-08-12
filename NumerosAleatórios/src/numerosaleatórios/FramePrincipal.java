@@ -90,12 +90,12 @@ public class FramePrincipal extends javax.swing.JFrame {
         for(int i = 0; i < quant; i++){
             nums.add(random.nextInt(100));
         }
-        System.out.println("Numeros: \n");
+        System.out.println("Numeros:");
         /*for(int i = 0; i < quant; i++){
             System.out.println(nums[i]);
         }*/
         
-        System.out.println(nums);
+        JOptionPane.showMessageDialog(null, "Números gerados: " + nums);
         
     }//GEN-LAST:event_btnGerarActionPerformed
 
